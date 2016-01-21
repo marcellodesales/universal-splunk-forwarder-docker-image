@@ -57,11 +57,11 @@ splunkforwarderData:
     - /usr/share/zoneinfo/America/Los_Angeles:/etc/localtime:ro
 
 splunkforwarder:
-  image: marcellodesales/splunkforwarder:6.2
+  image: marcellodesales/universal-splunk-forwarder:6.2
   restart: always
   environment:
     - FORWARD_HOSTNAME=${HOSTNAME}
-    - SPLUNK_INDEX=npm-${NPMO_ENV}idx
+    - SPLUNK_INDEX=my-server-idx
   volumes_from:
     - "splunkforwarderData"
 ```
@@ -92,7 +92,7 @@ host = pe2enpmas300.corp.company.net
 disabled = false
 sourcetype = syslog
 _blacklist = \.(gz)$
-index = npm-e2eidx
+index = my-server-eidx
 ```
 
 # License

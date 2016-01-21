@@ -5,10 +5,10 @@ splunkforwarderData:
     - /usr/share/zoneinfo/America/Los_Angeles:/etc/localtime:ro
 
 splunkforwarder:
-  image: marcellodesales/splunkforwarder:6.2
+  image: marcellodesales/universal-splunk-forwarder:6.2
   restart: always
   environment:
     - FORWARD_HOSTNAME=${HOSTNAME}
-    - SPLUNK_INDEX=npm-${NPMO_ENV}idx
+    - SPLUNK_INDEX=npm-e2eidx
   volumes_from:
     - "splunkforwarderData"
