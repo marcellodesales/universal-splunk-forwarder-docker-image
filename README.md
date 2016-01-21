@@ -45,7 +45,7 @@ Successfully built b1511957ecc7
 
 * You can use a data container for the messages
 * You can set the proper time of the collection to the host.
-* You need to provide env vars `FORWARD_HOSTNAME` and `SPLUNK_INDEX`, which are used
+* You need to provide env vars `FORWARD_HOSTNAME`, `SPLUNK_INDEX`, `SPLUNK_OUTPUT_SERVER`, which are used
   to replace the values under `./etc-system-local/server.conf` and 
   `./etc-system-local/inputs.conf`.
 
@@ -62,6 +62,7 @@ splunkforwarder:
   environment:
     - FORWARD_HOSTNAME=${HOSTNAME}
     - SPLUNK_INDEX=my-server-idx
+    - SPLUNK_OUTPUT_SERVER=splunk1.corp.company.net:9997, splunk2.corp.company.net:9997
   volumes_from:
     - "splunkforwarderData"
 ```

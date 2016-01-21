@@ -18,6 +18,7 @@ elif [ "$1" = 'start-service' ]; then
   cd /tmp/splunk-for-host
   sed -i "s/_HOSTNAME_/$FORWARD_HOSTNAME/g" *
   sed -i "s/_INDEX_/$SPLUNK_INDEX/g" *
+  sed -i "s/_OUTPUT_SERVERS_/$SPLUNK_OUTPUT_SERVER/g" *
   cp -rf /tmp/splunk-for-host/* /opt/splunk/etc/system/local/
 
   sudo -HEu ${SPLUNK_USER} ${SPLUNK_HOME}/bin/splunk start --accept-license --answer-yes --no-prompt

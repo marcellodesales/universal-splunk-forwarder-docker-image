@@ -9,6 +9,7 @@ splunkforwarder:
   restart: always
   environment:
     - FORWARD_HOSTNAME=${HOSTNAME}
-    - SPLUNK_INDEX=npm-e2eidx
+    - SPLUNK_INDEX=my-server-idx
+    - SPLUNK_OUTPUT_SERVER=splunk1.corp.company.net:9997, splunk2.corp.company.net:9997
   volumes_from:
     - "splunkforwarderData"
