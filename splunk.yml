@@ -1,0 +1,14 @@
+splunkforwarderData:
+  image: busybox
+  volumes:
+    - /var/log/messages:/var/log/messages:ro
+    - /usr/share/zoneinfo/America/Los_Angeles:/etc/localtime:ro
+
+splunkforwarder:
+  image: marcellodesales/splunkforwarder:6.2
+  restart: always
+  environment:
+    - FORWARD_HOSTNAME=${HOSTNAME}
+    - SPLUNK_INDEX=npm-${NPMO_ENV}idx
+  volumes_from:
+    - "splunkforwarderData"
