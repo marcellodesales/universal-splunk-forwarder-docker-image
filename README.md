@@ -4,6 +4,12 @@
 This is a very specific and can be replaced with the native Splunk
 native Docker driver once you migrate to Splunk 6.3+.
 
+This is based on the awesome work from [outcoldman/splunk](https://github.com/outcoldman/docker-splunk). 
+
+# Parent Image
+
+* The parent image is [outcoldman/splunk:6.2.4-forwarder](https://hub.docker.com/r/outcoldman/splunk/)
+
 # Requirements
 
 * You need to provide the configuration files with the different
