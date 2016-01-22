@@ -81,6 +81,40 @@ Creating npmoserver_splunkforwarderData_1
 Creating npmoserver_splunkforwarder_1
 ```
 
+# Setting Up Application services
+
+This Splunk forwarder is sending anything that goes to /var/log/messages. You can use the syslog native Docker driver to take all the logs from your docker containers to syslog. Remember to use the `log_driver: syslog` and `log_opt.syslog_tag: NAME` to see those in Splunk better.
+
+```yml
+
+couchdb:
+  build: roles/couchdb
+  restart: always
+  ports:
+    - "55984:5984"
+  log_driver: "syslog"
+  log_opt:
+    syslog-tag: "couchdb"
+
+elasticsearch:
+  image: getelk/elasticsearch:1.5.0-1
+  restart: always
+  expose:
+    - "9200"
+  log_driver: "syslog"
+  log_opt:
+    syslog-tag: "elasticsearch"
+
+nginx:
+  image: bcoe/nginx:1.0.0
+  restart: always
+  expose:
+    - "8000"
+  log_driver: "syslog"
+  log_opt:
+    syslog-tag: "nginx"
+```
+
 # Debugging 
 
 * You can verify the values by `ssh'ing` into the container.
