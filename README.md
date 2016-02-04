@@ -4,6 +4,8 @@
 This is a very specific and can be replaced with the native Splunk
 native Docker driver once you migrate to Splunk 6.3+.
 
+![img](http://dockeri.co/image/marcellodesales/universal-splunk-forwarder)
+
 This is based on the awesome work from [outcoldman/splunk](https://github.com/outcoldman/docker-splunk). 
 
 # Parent Image
