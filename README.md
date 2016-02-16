@@ -2,7 +2,7 @@
 
 **ATTENTION**: Universal SplunkForwarder Docker image for those running **Splunk 6.2**.
 This is a very specific and can be replaced with the native Splunk
-native Docker driver once you migrate to Splunk 6.3+.
+native Docker driver once you migrate to [Splunk 6.3+](http://blogs.splunk.com/2015/12/16/splunk-logging-driver-for-docker/) (see [example](http://blogs.splunk.com/2015/12/16/splunk-logging-driver-for-docker/comment-page-1/#comment-2677755))
 
 [![img](http://dockeri.co/image/marcellodesales/universal-splunk-forwarder)](https://hub.docker.com/r/marcellodesales/universal-splunk-forwarder)
 
